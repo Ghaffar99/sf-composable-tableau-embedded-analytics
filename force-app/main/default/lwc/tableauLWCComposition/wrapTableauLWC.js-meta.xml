@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Tableau Desktop Viz</masterLabel>
+    <description>A configurable Tableau visualization wrapper component.</description>
+    
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
+            
+            <property name="vizUrl" 
+                      type="String" 
+                      label="Tableau View URL" 
+                      description="The full URL of the Tableau view to embed"
+                      required="true"
+                      default="https://public.tableau.com/views/DeveloperSuperstore/Overview?:showVizHome=no&amp;:embed=true"
+                      />
+            
+            <property name="siteId" 
+                      type="String" 
+                      label="Tableau Site ID" 
+                      description="The Tableau Cloud/Server site ID (GUID format)"
+                      default="2301e487-cfe4-443d-9d3b-143e423fa6a3"/>
+            
+            <property name="height" 
+                      type="String" 
+                      label="Height" 
+                      description="Height of the visualization (e.g., 550px, 100%)"
+                      default="550px"/>
+            
+            <property name="width" 
+                      type="String" 
+                      label="Width" 
+                      description="Width of the visualization (e.g., 100%, 800px)"
+                      default="100%"/>
+            
+            <property name="useJwt" 
+                      type="Boolean" 
+                      label="Use JWT Authentication" 
+                      description="Enable JWT-based authentication for Tableau"
+                      default="true"/>
+            
+            <property name="debugMode" 
+                      type="Boolean" 
+                      label="Debug Mode" 
+                      description="Enable debug logging in browser console"
+                      default="false"/>
+            
+            <property
+                name="uafDefinitionNamesStr"
+                type="String"
+                default=""
+                required="false"
+            />
+            
+            
+        </targetConfig>
+                <targetConfig targets="lightningCommunity__Page">
+            <paletteSection>Analytics</paletteSection>
+        </targetConfig>
+        <targetConfig targets="lightningCommunity__Default">
+
+             <property name="vizUrl" 
+                      type="String" 
+                      label="Tableau View URL" 
+                      description="The full URL of the Tableau view to embed"
+                      required="true"
+                      default="https://public.tableau.com/views/DeveloperSuperstore/Overview?:showVizHome=no&amp;:embed=true"
+                      />
+            
+            <property name="siteId" 
+                      type="String" 
+                      label="Tableau Site ID" 
+                      description="The Tableau Cloud/Server site ID (GUID format)"
+                      default="2301e487-cfe4-443d-9d3b-143e423fa6a3"/>
+            
+            <property name="height" 
+                      type="String" 
+                      label="Height" 
+                      description="Height of the visualization (e.g., 550px, 100%)"
+                      default="550px"/>
+            
+            <property name="width" 
+                      type="String" 
+                      label="Width" 
+                      description="Width of the visualization (e.g., 100%, 800px)"
+                      default="100%"/>
+            
+            <property name="useJwt" 
+                      type="Boolean" 
+                      label="Use JWT Authentication" 
+                      description="Enable JWT-based authentication for Tableau"
+                      default="true"/>
+            
+            <property name="debugMode" 
+                      type="Boolean" 
+                      label="Debug Mode" 
+                      description="Enable debug logging in browser console"
+                      default="false"/>
+            
+            <property
+                name="uafDefinitionNamesStr"
+                type="String"
+                default=""
+                required="false"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
